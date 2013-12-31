@@ -21,10 +21,15 @@ RUN apt-get upgrade -y
 # install our "base" environment
 RUN apt-get install --no-install-recommends -y openssh-server pwgen sudo vim-tiny
 
+# install Apache and half the PHP universe
+RUN apt-get install -y apache2-mpm-prefork libapache2-mod-php5 php-apc \
+ php5-curl php5-gd php5-gmp php5-mysql php5-memcache
+
 # clean up after ourselves
 RUN apt-get clean
 
 EXPOSE 22
+EXPOSE 80
 
 ADD startup.sh /opt/startup.sh
 ENTRYPOINT ["/bin/bash", "/opt/startup.sh"]
