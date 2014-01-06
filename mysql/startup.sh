@@ -23,5 +23,4 @@ if [ ! -f /var/lib/mysql/ibdata1 ]; then
 fi
 
 /usr/sbin/sshd
-/usr/bin/mysqld_safe 
-
+/usr/bin/mysqld_safe --skip-syslog 
