@@ -11,15 +11,12 @@ RUN apt-get update && \
 # clean up after ourselves
 RUN apt-get clean
 
-EXPOSE 80
-
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
-
 RUN mkdir -p /var/www
 ADD pi.php /var/www/pi.php
 ADD php.timezone.ini /etc/php5/apache2/conf.d/php.timezone.ini
 
-ENTRYPOINT ["/usr/sbin/apache2", "-D", "FOREGROUND"]
+EXPOSE 80
+
+ADD startup.sh /tmp/startup.sh
+CMD ["/tmp/startup.sh"]
 
