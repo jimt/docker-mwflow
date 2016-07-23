@@ -2,7 +2,7 @@ docker-mediawikiflow
 ====================
 
 ##Description
-A dockerfile to create an updated Ubuntu 12.04 image with SSHD.
+A dockerfile to create an updated Ubuntu 16.04 image with SSHD.
 
 ##Usage
 docker run -d -p xxxx:22 yyyyyyyyyyyy
