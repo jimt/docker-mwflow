@@ -1,10 +1,10 @@
 docker-mediawikiflow
 ====================
 
-##Description
+## Description
 A dockerfile to create an updated Ubuntu 16.04 image with SSHD.
 
-##Usage
+## Usage
 docker run -d -p xxxx:22 yyyyyyyyyyyy
 
 This creates an **ubuntu** user whose initial password is available in the logs
